@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+
+with open(sys.argv[1]) as file:
+	for line in file:
+		num1 = int(line)
+
+		for x in range(2, num1):
+				if num % x == 0:
+					factor1 = int(num1 / x)
+					factor2 = x
+					break
+
+		print(str(num) + "=" + str(factor1) + "*" + str(factor2))
