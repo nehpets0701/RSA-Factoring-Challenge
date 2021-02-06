@@ -7,9 +7,11 @@ if len(sys.argv) != 2:
 with open(sys.argv[1]) as file:
     for line in file:
         try:
-            num1 = int(line)
+            num = int(line)
         except:
             raise(TypeError, "There is a word in this file")
+        factor1 = 0
+        factor2 = 0
 
         for x in range(2, num):
                 if num % x == 0:
