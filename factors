@@ -1,14 +1,23 @@
 #!/usr/bin/python3
 import sys
 
+if len(sys.argv) != 2:
+        raise(TypeError, "Usage: factors <file>")
+
 with open(sys.argv[1]) as file:
-	for line in file:
-		num1 = int(line)
+    for line in file:
+        try:
+            num1 = int(line)
+        except:
+            raise(TypeError, "There is a word in this file")
 
-		for x in range(2, num1):
-				if num % x == 0:
-					factor1 = int(num1 / x)
-					factor2 = x
-					break
+        for x in range(2, num):
+                if num % x == 0:
+                    factor1 = int(num / x)
+                    factor2 = x
+                    break
 
-		print(str(num) + "=" + str(factor1) + "*" + str(factor2))
+        if factor1 == 0 and factor2 == 0:
+            print("There are no factors for {}".format(num))
+        else:
+            print(str(num) + "=" + str(factor1) + "*" + str(factor2))
